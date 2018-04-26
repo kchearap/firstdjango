@@ -23,5 +23,6 @@ class CustomUser(AbstractUser):
         return self.name 
     
     def save(self, *args, **kwargs):
-        self.bmi = self.height / (self.weight/100) ** 2
+        self.bmi = self.weight / (self.height/100) ** 2
         super().save(*args, **kwargs)  # Call the "real" save() method.
+          
